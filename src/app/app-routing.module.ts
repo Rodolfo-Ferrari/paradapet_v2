@@ -68,7 +68,7 @@ const routes: Routes = [
   },
   // Pagina Registro
   {
-    path: 'register',
+    path: 'user/register',
     loadChildren: () =>
       import('./user/register/register.module').then(
         (m) => m.RegisterPageModule
