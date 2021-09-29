@@ -8,6 +8,7 @@ quantas pessoas moram
 ja tiveram contato com algum animal
 tipo de residencia
 quantas horas por dia o animal ficará sozinho
+
 Concorda que um voluntário poderá ir até sua casa,
 conhecer você e sua família, e o local onde o animal ficará,
 entregando-o pessoalmente?
@@ -25,3 +26,10 @@ Cadastro Principal:
   cpf
   gender
   address
+
+adotando
+  id do adotante
+  id do animal
+  id do doador
+  mensagem
+  data

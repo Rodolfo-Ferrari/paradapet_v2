@@ -122,6 +122,16 @@ const routes: Routes = [
     path: 'suporte',
     loadChildren: () => import('./pages/support/support.module').then( m => m.SupportPageModule)
   },
+
+  {
+    path: 'loginadotar',
+    loadChildren: () => import('./pages/loginadotar/loginadotar.module').then( m => m.LoginadotarPageModule)
+  },
+
+  {
+    path: 'logindoar',
+    loadChildren: () => import('./pages/logindoar/logindoar.module').then( m => m.LogindoarPageModule)
+  },
   // Rota curinga (rotas inexistentes)
   // TEM QUE SER SEMPRE A ÚLTIMA ROTA
   {

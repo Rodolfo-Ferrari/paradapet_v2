@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LogindoarPageRoutingModule } from './logindoar-routing.module';
 
 import { LogindoarPage } from './logindoar.page';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LogindoarPageRoutingModule
+    LogindoarPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [LogindoarPage]
 })
