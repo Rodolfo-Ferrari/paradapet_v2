@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAN-Tk6GC7M68TXkgtXejKeQhqygUoN7Fw",
+  apiKey: "AIzaSyAN-Tk6GC7M68TXkgtXejKeQhqygUoN7Fw",
   authDomain: "paradapet-a3ae5.firebaseapp.com",
   projectId: "paradapet-a3ae5",
   storageBucket: "paradapet-a3ae5.appspot.com",

@@ -22,7 +22,8 @@ export class AdotarPage implements OnInit {
     public auth: AngularFireAuth,
     private router: Router,
     public alert: AlertController,
-    public afs: AngularFirestore, // Firestore
+    public afs: AngularFirestore,
+    // Firestore
   ) { }
 
   ngOnInit() { }
@@ -44,13 +45,13 @@ export class AdotarPage implements OnInit {
               if (uData.exists) {
                 this.feedback(
                   data.user.displayName,
-                  'Você já pode acessar o conteúdo restrito.',
+                  'Você já pode acessar a página de adoção.',
                   '/user/profile'
                 );
               } else {
                 this.feedback(
                   data.displayName,
-                  'Você precisa completar seu cadastro para acessar o conteúdo restrito.',
+                  'Você precisa completar seu cadastro para acessar a página de adoção.',
                   '/loginadotar'
                 );
               }

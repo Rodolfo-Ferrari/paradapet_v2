@@ -19,11 +19,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  {
-    path: 'folder/:id',
-    loadChildren: () =>
-      import('./folder/folder.module').then((m) => m.FolderPageModule),
-  },
 
   // Página inicial
   {
@@ -37,6 +32,9 @@ const routes: Routes = [
     path: 'adotar',
     loadChildren: () =>
       import('./user/adotar/adotar.module').then((m) => m.AdotarPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   // Página doar
@@ -44,6 +42,9 @@ const routes: Routes = [
     path: 'doar',
     loadChildren: () =>
       import('./user/doar/doar.module').then((m) => m.DoarPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   // Pagina Login
@@ -51,6 +52,9 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./user/login/login.module').then((m) => m.LoginPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: isLogged },
   },
 
   //Pagina Profile
@@ -58,6 +62,9 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () =>
       import('./user/profile/profile.module').then((m) => m.ProfilePageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   //Pagina Logout
@@ -65,6 +72,9 @@ const routes: Routes = [
     path: 'logout',
     loadChildren: () =>
       import('./user/logout/logout.module').then((m) => m.LogoutPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   // Pagina Registro
   {
@@ -73,12 +83,18 @@ const routes: Routes = [
       import('./user/register/register.module').then(
         (m) => m.RegisterPageModule
       ),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   {
     path: 'user',
     loadChildren: () =>
       import('./user/user.module').then((m) => m.UserPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   {
     path: 'duvidas',
@@ -96,6 +112,9 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () =>
       import('./pages/chat/chat.module').then((m) => m.ChatPageModule),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   {
@@ -104,33 +123,37 @@ const routes: Routes = [
       import('./pages/notificacao/notificacao.module').then(
         (m) => m.NotificacaoPageModule
       ),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
-  {
-    path: 'chat',
-    loadChildren: () =>
-      import('./pages/chat/chat.module').then((m) => m.ChatPageModule),
-  },
-  {
-    path: 'notificacao',
-    loadChildren: () =>
-      import('./pages/notificacao/notificacao.module').then(
-        (m) => m.NotificacaoPageModule
-      ),
-  },
   {
     path: 'suporte',
-    loadChildren: () => import('./pages/support/support.module').then( m => m.SupportPageModule)
+    loadChildren: () =>
+      import('./pages/support/support.module').then((m) => m.SupportPageModule),
   },
 
   {
     path: 'loginadotar',
-    loadChildren: () => import('./pages/loginadotar/loginadotar.module').then( m => m.LoginadotarPageModule)
+    loadChildren: () =>
+      import('./pages/loginadotar/loginadotar.module').then(
+        (m) => m.LoginadotarPageModule
+      ),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
 
   {
     path: 'logindoar',
-    loadChildren: () => import('./pages/logindoar/logindoar.module').then( m => m.LogindoarPageModule)
+    loadChildren: () =>
+      import('./pages/logindoar/logindoar.module').then(
+        (m) => m.LogindoarPageModule
+      ),
+    // Somente para usuários logados
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: toLogin },
   },
   // Rota curinga (rotas inexistentes)
   // TEM QUE SER SEMPRE A ÚLTIMA ROTA
@@ -139,7 +162,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./page/e404/e404.module').then((m) => m.E404PageModule),
   },
-
 ];
 
 @NgModule({
