@@ -86,17 +86,26 @@ export class LogindoarPage implements OnInit {
     // Um formulário é um 'agrupamento' (group) de campos...
     this.doarForm = this.form.group({
       uid: [''],
-      nomedoanimal: ['', Validators.compose([Validators.required, removeSpaces])],
+      nomedoanimal: [
+        '',
+        Validators.compose([Validators.required, removeSpaces]),
+      ],
       raca: ['', Validators.compose([Validators.required, removeSpaces])],
-      datadenascieidade:['', Validators.compose([Validators.required])],
-      especie:['', Validators.compose([Validators.required, removeSpaces])],
-      vacina:['',],
-      datainclusao:['', Validators.compose([Validators.required, removeSpaces])],
-      descricao:['', Validators.compose([Validators.required, removeSpaces])],
-      nomedoador:['', Validators.compose([Validators.required, removeSpaces])],
-      fotodoanimal:[''],
-      motivodadoacao:['', Validators.compose([Validators.required, removeSpaces])],
-
+      datadenascieidade: ['', Validators.compose([Validators.required])],
+      especie: ['', Validators.compose([Validators.required, removeSpaces])],
+      vacina: [''],
+      datainclusao: [
+        '',
+        Validators.compose([Validators.required, removeSpaces]),
+      ],
+      descricao: ['', Validators.compose([Validators.required, removeSpaces])],
+      nomedoador: ['', Validators.compose([Validators.required, removeSpaces])],
+      fotodoanimal: [''],
+      motivodadoacao: [
+        '',
+        Validators.compose([Validators.required, removeSpaces]),
+      ],
+      date: [''],
     });
   }
 
@@ -138,7 +147,7 @@ export class LogindoarPage implements OnInit {
             this.doarForm.reset();
 
             // Vai para perfil
-            this.router.navigate(['/user/profile']);
+            this.router.navigate(['/profile']);
           },
         },
       ],

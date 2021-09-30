@@ -91,7 +91,8 @@ export class LoginadotarPage implements OnInit {
       contatoanimal:['', Validators.compose([Validators.required])],
       residencia: [''],
       horasanimal:['', Validators.compose([Validators.required, removeSpaces])],
-      visitavoluntario: [''], 
+      visitavoluntario: [''],
+      date: [''],
     });
   }
 
@@ -133,7 +134,7 @@ export class LoginadotarPage implements OnInit {
             this.adotarForm.reset();
 
             // Vai para perfil
-            this.router.navigate(['/user/profile']);
+            this.router.navigate(['/profile']);
           },
         },
       ],
